@@ -1,0 +1,14 @@
+<%= form_with model: @article, method: "post", url: "/articles" do | form | %>
+    <div>
+        <%= form.label :Title %><br>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :Body %><br>
+        <%= form.text_area :body %>
+    </div>
+
+    <%= form.submit "Opublikuj"%>
+
+<% end %>

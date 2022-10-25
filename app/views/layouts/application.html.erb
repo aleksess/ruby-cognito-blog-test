@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CognitoExampleBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <div>
+      <a href="/">Home</a> <br />
+      <% if !session[:access_token] -%>
+        <a href="/auth/sign_in">Sign in</a>
+      <% else -%>
+        Welcome: <%= session[:username] %>
+
+        <%= form_with url: "/auth/sign_out", method: 'POST' do | form | %>
+          <%= form.submit "Sign out" %>
+        <% end %>
+
+        <a href="/articles/new">Create a new article</a>
+      <% end %>
+      
+    </div>
+    <%= yield %>
+  </body>
+</html>

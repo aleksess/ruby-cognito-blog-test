@@ -1,0 +1,22 @@
+<h1>Sign Up</h1>
+
+<%= form_with url: '/users', method: 'POST' do | form |%>
+    <div>
+        <%= form.label :email %><br>
+        <%= form.email_field :email %>
+    </div>
+
+
+    <div>
+        <%= form.label :Username %><br>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :Password %><br>
+        <%= form.password_field :password %>
+    </div>
+
+    <%= form.submit %>
+
+<% end %>
