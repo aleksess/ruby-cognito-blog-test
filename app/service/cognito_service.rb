@@ -23,7 +23,7 @@ class CognitoService
         })
 
         @client.admin_confirm_sign_up({
-            user_pool_id: ENV['AWS_COGNITO_USER_POOL'], # required
+            user_pool_id: ENV['AWS_COGNITO_USER_POOL'],
             username: user[:username],
           })
     end
